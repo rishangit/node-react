@@ -14,6 +14,11 @@ app.get('/api/customers/', (req, res)=>{
     res.json(customers);
 })
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/public/index.html'));
+    console.log('Url Not match')
+  });
+
 const port = 8080;
 
 app.listen(port, ()=>{
