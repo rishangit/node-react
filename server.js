@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const path = require('path');
 
 app.get('/api/customers/', (req, res)=>{
 
@@ -14,9 +14,10 @@ app.get('/api/customers/', (req, res)=>{
     res.json(customers);
 })
 
-app.get('*', (req, res) => {
-    res.sendFile('./client/public/index.html');
-    console.log('Url Not match')
+app.get('/', (req, res) => {
+    console.log('Url Not match', path.join(__dirname, './client/public/index.html'))
+    res.sendFile(path.join(__dirname, './client/public/index.html'));
+    
   });
 
 const port = 8080;
