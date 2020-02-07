@@ -14,7 +14,7 @@ app.get('/api/customers/', (req, res)=>{
     res.send(customers);
 })
 
-const port = 5000;
+const port = 8080;
 
 app.listen(port, ()=>{
     console.log(`Server run on ${port}`)
