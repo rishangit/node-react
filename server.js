@@ -11,7 +11,7 @@ app.get('/api/customers/', (req, res)=>{
     ]
 
 
-    res.send(customers);
+    res.json(customers);
 })
 
 const port = 8080;
